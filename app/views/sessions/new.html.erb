@@ -1,0 +1,22 @@
+<!-- app/views/users/new.html.erb -->
+
+<h1>Login</h1>
+
+<%= form_tag '/login' do %>
+
+<div class="row mb-3">
+  <%= label_tag(:email, "Email:", class: "col-sm-2 col-form-label")%>
+  <div class="col-sm-10">
+    <%= text_field_tag(:email, "Enter Your Email", class: "form-control") %>
+  </div>
+</div>
+<div class="row mb-3">
+  <%= label_tag(:password, "Password:", class: "col-sm-2 col-form-label")%>
+  <div class="col-sm-10">
+    <%= text_field_tag(:password, "Enter Your Password", class: "form-control") %>
+  </div>
+</div>
+
+  <%= submit_tag("Submit", class: "btn btn-primary") %>
+
+<% end %>
