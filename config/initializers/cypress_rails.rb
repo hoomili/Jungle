@@ -5,6 +5,7 @@ return unless Rails.env.test?
 
 CypressRails.hooks.before_server_start do
   # Called once, before either the transaction or the server is started
+
 end
 
 CypressRails.hooks.after_transaction_start do
@@ -17,4 +18,11 @@ end
 
 CypressRails.hooks.before_server_stop do
   # Called once, at_exit
+  DatabaseCleaner.clean
+end
+
+private
+
+def open_asset(file_name)
+  File.open(Rails.root.join('db', 'seed_assets', file_name))
 end
